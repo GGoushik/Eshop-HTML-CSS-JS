@@ -1,0 +1,240 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.navbar-links {
+    display: flex;
+    column-gap: 20px;
+}
+
+.navbar-links a {
+    text-decoration: none;
+    color: #1D232C;
+}
+
+.navbar-links a:hover {
+    text-decoration: underline;
+    color: green;
+}
+
+.navbar-menu-toggle {
+    display: none;
+}
+
+/* side navbar */
+.side-navbar {
+    background-color: #1D232C;
+    width: 50%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -60%;
+    padding: 20px;
+    color: white;
+    transition: 0.5s;
+}
+
+.side-navbar-link {
+    margin-bottom: 30px;
+}
+
+.side-navbar-links a {
+    text-decoration: none;
+    color: white;
+}
+
+.side-navbar-links a:hover {
+    text-decoration: underline;
+    color: green;
+}
+/* /header/ */
+.header{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 50px;
+}
+.header button{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    background-color: #1D232C;
+    color: white;
+    cursor: pointer;
+}
+.service{
+    padding: 20px;
+}
+.service-container-1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.service-container-2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+.service-container-2 div{
+    background-color: #ebc18e;
+    border-radius: 5px;
+    padding: 10px;
+}
+.new-arrival{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.new-arrival-container{
+    position:relative;
+    flex-basis: 20%;
+}
+.new-arrival-button{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 10px;
+    background-color:bisque;
+    color: #1D232C;
+    position: absolute;
+    top: 50%;
+    left:18%;
+    border-radius: 10px;
+    border: none;
+}
+.new-arrival-button:hover{
+   text-decoration: underline;
+    background-color: #ebc18e;
+
+}
+.news{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+.news input{
+    padding: 10px;
+    width: 80vw;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: solid black 3px;
+}
+.news button{
+    margin-top: 10px;
+    color:white;
+    background-color:rgb(220, 56, 56);
+    border-radius: 10px;
+    padding: 10px;
+}
+.news button:hover{
+    background-color: orange;
+    text-decoration: underline;
+}
+.footer{
+    margin-top: 20px;
+    padding: 40px;
+    background-color:#1D232C;
+    color: white;
+    text-align: center;
+    font-size: small;
+}
+.product-section{
+    margin-top: 20px;
+}
+.product-search{
+    width: 80%;
+    border: solid black 2px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: auto;
+
+}
+.product-search input{
+    border: none;
+    background-color: transparent;
+    width: 100%;
+}
+.product-search input:focus{
+    outline:none;
+}
+.products{
+    padding: 20px;
+    display:inline-flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.products-box{
+    text-align:center;
+    flex-basis: 20%;
+}
+.product-box img{
+    border-radius: 10px;
+}
+.back {
+    margin-top: 10px;
+    background-color: #1D232C;
+    color: white;
+}
+.contact{
+    color: white;
+    width: 40%;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 3px;
+    border-color: #ebc18e;
+    background-color: transparent;
+    margin-left: 10px;
+    margin-bottom: 30px;
+    
+}
+.h4{
+    padding-top: 20px;
+    padding-left: 5px;
+
+}
+
+/* Media Query */
+@media screen and (max-width: 700px) {
+    .navbar-menu-toggle {
+        display: block;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+    .header-image{
+        display: none;
+    }
+    .service-container-1{
+        display: none;
+    }
+    .service-container-2{
+        flex-direction:column ;
+    }
+}
+
+.side-navbar.open {
+    left: 0;
+}

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eshop</title>
+    <link rel="icon" href="C:\Users\GOUSHIK G\Desktop\TUTORIALS\JAVA SCRIPT\DAIRY\image.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body style="background-color: bisque;">
+    <!--Navbar-->
+    <nav class="navbar" style="background-color:bisque">
+        <h1>Eshop</h1>
+
+        <div class="navbar-links">
+            <p class="navbar-link"><a href="index.html">Home</a></p>
+            <p class="navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+        
+        <div class="navbar-menu-toggle" onclick="showNavbar()">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </nav>
+    <!--side navbar-->
+    <div class="side-navbar">
+        <p style="text-align: right;" onclick="closeNavbar()">
+            <i class="fa-solid fa-xmark"></i>
+        </p>
+
+        <div class="side-navbar-links">
+            <p class="side-navbar-link"><a href="index.html">Home</a></p>
+            <p class="side-navbar-link"><a href="collection.html">Collections</a></p>
+            <p class="side-navbar-link"><a href="contact.html">Contact</a></p>
+        </div>
+    </div>
+    <!--product-->
+    <div class="product-section">
+        <form class="product-search">
+            <input type="text" id="search" placeholder="Search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </form>
+        <div class="products" id="products">
+            <div class="product-box">
+                <img src="C:\Users\GOUSHIK G\Desktop\Eshop\shirt.jpeg">
+                <p>Shirts</p>
+            </div>
+            <div class="product-box">
+                <img src="C:\Users\GOUSHIK G\Desktop\Eshop\tshirt.jpeg">
+                <p>T-Shirts</p>
+            </div>
+            <div class="product-box">
+                <img src="C:\Users\GOUSHIK G\Desktop\Eshop\pants.jpeg">
+                <p>Pants</p>
+            </div>
+            <div class="product-box">
+                <img src="C:\Users\GOUSHIK G\Desktop\Eshop\shoe.jpeg" height="200">
+                <p>Shoes</p>
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <div class="footer">
+        <div class="footer-container">
+            <div class="footer-box-1">
+                <h2 class="headingtext">Eshop</h2>
+                <p style="padding-top: 15px;">We are committed to providing you with the best shopping experience. A wide range of products, from the latest fashion trends to unique home decor and more.</p>
+                <div class="footer-icon-container" style="padding-top: 5px;">
+                    <i class="fa-brands fa-instagram" style="color: white; padding-right: 20px;"></i>
+                    <i class="fa-brands fa-twitter" style="color: white; padding-right: 20px;"></i>
+                    <i class="fa-brands fa-facebook" style="color: white;"></i>
+                </div>
+            </div>
+        </div>
+        <p style="padding-top: 5px;">@2024 Eshop.com</p>
+    </div>
+
+    <script>
+        function showNavbar() {
+            document.querySelector('.side-navbar').classList.add('open');
+        }
+
+        function closeNavbar() {
+            document.querySelector('.side-navbar').classList.remove('open');
+        }
+
+        document.getElementById("search").addEventListener("keyup", function(event) {
+            var enteredvalue = event.target.value.toUpperCase();
+            var productlist = document.querySelectorAll(".product-box");
+
+            productlist.forEach(function(product) {
+                var productname = product.querySelector("p").textContent;
+
+                if (productname.toUpperCase().indexOf(enteredvalue) < 0) {
+                    product.style.display = "none";
+                } else {
+                    product.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
